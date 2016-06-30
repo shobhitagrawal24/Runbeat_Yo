@@ -1,0 +1,58 @@
+<div class="container manage-panel">
+  <br>
+  <h2 class="text-center">Select Challenge</h2>
+
+  <br>
+
+  <!--<p>You are playing against {{user}}</p>
+  <br>-->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <fieldset class="form-group">
+        <label for="InputTitleFilter-Create">Challenge Title</label>
+        <input type="text" class="form-control field-colour" id="InputTitleFilter-Create" placeholder="Search for challenge" ng-model="filter.title">
+      </fieldset>
+    </div>
+    <div class="col-sm-3">
+      <label for="InputDifficultyFilter-Create">Filter difficulty</label>
+      <select class="form-control field-colour" ng-model="filter.difficulty" id="InputDifficultyFilter-Create">
+        <option value="">-- Select --</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+  </div>
+  <hr>
+
+  <div ng-repeat="challenge in challenges | filter : filter | orderBy : 'title'">
+    <br>
+    <div ng-class="{dropup: challenge.open}">
+      <button class="btn btn-default btn-block field-colour" ng-click="challenge.open = !challenge.open">
+        <span class="pull-left"><b>{{challenge.title}}</b> ({{challenge.difficulty}})</span>
+            <span class="pull-right"><span class="caret"></span>
+            </span>
+      </button>
+    </div>
+
+    <div class="wrapper manage-panel" ng-show="challenge.open">
+      <br>
+
+      <div class="row">
+        <div class="col-sm-8">
+          <p>{{challenge.instruction}}</p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <img class="size-picture" ng-src="{{challenge.image}}">
+          <br>
+          <button class="btn btn-primary issue" value="{{challenge.id}}">Issue Challenge</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
