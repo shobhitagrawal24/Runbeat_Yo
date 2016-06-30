@@ -1,0 +1,113 @@
+<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarController">
+  <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs-inline-block" href="#">RunBeat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="hidden-xs"><a href="#"><img src="assets/images/Run_Beat_Logo.png" class="brand"></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="nav.isLoggedIn()">
+                <li class="dropdown">
+                    <a class="dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <figure>
+                            <img src="assets/image/Challenge.png" class="menuItem">
+                            <figcaption>Challenges<span class="caret"></span></figcaption>
+                        </figure></a>
+                    <a class="dropdown-toggle visible-xs-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Challenges</a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="create1">Create New</a></li>
+                        <li><a ui-sref="manage">Manage Open</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <figure>
+                            <img src="assets/img/Profile.jpg" class="menuItem">
+                            <figcaption>Username<span class="caret"></span></figcaption>
+                        </figure></a>
+                    <a class="dropdown-toggle visible-xs-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <p ng-show="nav.isLoggedIn()">Hello {{ nav.getCurrentUser().name }} </p></a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="profile">Profile</a></li>
+                        <li><a ui-sref="friendsearch">Friend list</a></li>
+                        <!--<li ng-controller="logoutController"><a ng-click='logout()'>Logout</a></li> -->
+						<li ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-hide="nav.isLoggedIn()" ui-sref-active="active">
+                <li class="hidden-xs">
+                    <p class="navbar-btn">
+                        <a ui-sref="login" class="btn btn-default btn-block">Login</a>
+                        <br class="navbar-login">
+                        <a ui-sref="signup" class="btn btn-primary btn-block">Sign Up</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+  </div>
+</div>
+<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarController">
+  <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs-inline-block" href="#">RunBeat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="hidden-xs"><a href="#"><img src="assets/images/Run_Beat_Logo.png" class="brand"></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="nav.isLoggedIn()">
+                <li class="dropdown">
+                    <a class="dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <figure>
+                            <img src="assets/image/Challenge.png" class="menuItem">
+                            <figcaption>Challenges<span class="caret"></span></figcaption>
+                        </figure></a>
+                    <a class="dropdown-toggle visible-xs-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Challenges</a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="create1">Create New</a></li>
+                        <li><a ui-sref="manage">Manage Open</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <figure>
+                            <img src="assets/img/Profile.jpg" class="menuItem">
+                            <figcaption>Username<span class="caret"></span></figcaption>
+                        </figure></a>
+                    <a class="dropdown-toggle visible-xs-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <p ng-show="nav.isLoggedIn()">Hello {{ nav.getCurrentUser().name }} </p></a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="profile">Profile</a></li>
+                        <li><a ui-sref="friendsearch">Friend list</a></li>
+                        <!--<li ng-controller="logoutController"><a ng-click='logout()'>Logout</a></li> -->
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-hide="nav.isLoggedIn()" ui-sref-active="active">
+                <li class="hidden-xs">
+                    <p class="navbar-btn">
+                        <a ui-sref="login" class="btn btn-default btn-block">Login</a>
+                        <br class="navbar-login">
+                        <a ui-sref="signup" class="btn btn-primary btn-block">Sign Up</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+  </div>
+</div>
